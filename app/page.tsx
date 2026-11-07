@@ -58,6 +58,7 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#product">Product</a>
+          <a href="#campaign">In action</a>
           <a href="#styles">Styles</a>
           <a href="#workflow">Workflow</a>
         </nav>
@@ -131,9 +132,50 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="campaign-section" id="campaign">
+        <div className="campaign-heading">
+          <div>
+            <p className="section-index">IN ACTION / 02</p>
+            <h2>Built for the moment<br /><span>before publish.</span></h2>
+          </div>
+          <p>From the first take to the final timeline, Xenvora keeps every word close to the creative decision that shaped it.</p>
+        </div>
+
+        <div className="campaign-grid">
+          <figure className="campaign-frame portrait-frame">
+            <img src="/brand/creator-portrait.png" alt="Creator recording in a professional studio" loading="lazy" />
+            <div className="frame-shade" />
+            <figcaption className="frame-meta"><span>01 / CAPTURE</span><span>VOICE IN FOCUS</span></figcaption>
+            <div className="live-caption" aria-hidden="true"><span>MAKE</span><strong>EVERY WORD</strong><span>LAND.</span></div>
+          </figure>
+
+          <figure className="campaign-frame rig-frame">
+            <img src="/brand/creator-rig.png" alt="Professional microphone, camera and editing controls" loading="lazy" />
+            <div className="frame-shade" />
+            <figcaption className="frame-meta"><span>02 / DIRECT</span><span>DESIGN THE DELIVERY</span></figcaption>
+            <div className="caption-chip" aria-hidden="true"><i /> Automatic contrast</div>
+          </figure>
+
+          <figure className="campaign-frame suite-frame">
+            <img src="/brand/edit-suite.png" alt="Video editor working in a focused post-production suite" loading="lazy" />
+            <div className="frame-shade" />
+            <figcaption className="frame-meta"><span>03 / FINISH</span><span>ONE FOCUSED WORKFLOW</span></figcaption>
+            <div className="timeline-overlay" aria-hidden="true">
+              <span className="playhead" />
+              <div><i /><i /><i /><i /></div>
+              <small>WORDS / TIMING / STYLE</small>
+            </div>
+          </figure>
+        </div>
+
+        <div className="campaign-marquee" aria-hidden="true">
+          <div><span>TRANSCRIBE</span><i /> <span>LOCALISE</span><i /> <span>DESIGN</span><i /> <span>EXPORT</span><i /> <span>TRANSCRIBE</span><i /> <span>LOCALISE</span><i /></div>
+        </div>
+      </section>
+
       <section className="style-section" id="styles">
         <div className="section-heading light-heading">
-          <p className="section-index">STYLES / 02</p>
+          <p className="section-index">STYLES / 03</p>
           <h2>Caption like you <span>mean it.</span></h2>
           <p>Four directions from a ten-style toolkit. Your voice decides the rest.</p>
         </div>
@@ -149,7 +191,7 @@ export default function Home() {
 
       <section className="workflow-section" id="workflow">
         <div className="workflow-intro">
-          <p className="section-index">WORKFLOW / 03</p>
+          <p className="section-index">WORKFLOW / 04</p>
           <h2>Three moves from raw clip to ready post.</h2>
           <p>Keep the creative decisions. Lose the repetitive handoffs.</p>
         </div>
@@ -170,7 +212,7 @@ export default function Home() {
       <footer className="site-footer">
         <a className="brand" href="#top"><span className="brand-mark" aria-hidden="true"><span /><span /></span><span className="brand-copy">Xenvora Digital <small>by Edit Buddy</small></span></a>
         <p>Caption design and multilingual transcription studio.</p>
-        <p className="model-credit">3D model: “Microphone” by ChoboiAssets, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>.</p>
+        <p className="model-credit">Original campaign imagery created for Xenvora Digital.</p>
         <span>© 2026 Xenvora Digital</span>
       </footer>
     </main>
