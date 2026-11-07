@@ -10,9 +10,10 @@ import {
 } from "lucide-react";
 
 import { CreatorRigExperience } from "@/components/marketing/car-experience";
+import { getChatGPTUser } from "@/app/chatgpt-auth";
 import "./marketing.css";
 
-const editorUrl = "/editor/";
+export const dynamic = "force-dynamic";
 
 const featureCards = [
   {
@@ -48,7 +49,13 @@ const captionLooks = [
   { label: "URDU", text: "KAHANI KO / AAGE BARHAO", className: "look-urdu" },
 ];
 
-export default function Home() {
+function initials(value: string) {
+  return value.split(/\s|@/).filter(Boolean).slice(0, 2).map((part) => part[0]?.toUpperCase()).join("") || "XD";
+}
+
+export default async function Home() {
+  const user = await getChatGPTUser();
+  const editorUrl = user ? "/studio" : "/account";
   return (
     <main className="marketing-shell">
       <header className="site-nav">
@@ -62,7 +69,14 @@ export default function Home() {
           <a href="#styles">Styles</a>
           <a href="#workflow">Workflow</a>
         </nav>
-        <a className="nav-cta" href={editorUrl}>Open studio <ArrowUpRight size={16} /></a>
+        <div className="nav-account">
+          {user ? (
+            <a className="user-pill" href="/account" aria-label="Open your account">
+              <span>{initials(user.displayName)}</span><small>{user.displayName}</small>
+            </a>
+          ) : <a className="nav-login" href="/account">Sign in</a>}
+          <a className="nav-cta" href={editorUrl}>{user ? "Open studio" : "Start free"} <ArrowUpRight size={16} /></a>
+        </div>
       </header>
 
       <section className="car-story" id="top">
