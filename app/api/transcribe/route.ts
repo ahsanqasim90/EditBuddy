@@ -6,7 +6,7 @@ export async function POST(request:Request){
  if(!request.headers.get('oai-authenticated-user-id'))return json({error:'Sign in with ChatGPT to transcribe.'},401);
  const origin=request.headers.get('origin');if(!origin||origin!==new URL(request.url).origin)return json({error:'Cross-origin requests are not allowed.'},403);
  const key=(env as unknown as Record<string,string>).ELEVENLABS_API_KEY;
- if(!key)return json({error:'Server secret ELEVENLABS_API_KEY is missing. Add it in ChatGPT Sites → Edit Buddy Captions → More actions → Settings. Never paste it into this editor or chat.',code:'key_missing'},503);
+ if(!key)return json({error:'Server secret ELEVENLABS_API_KEY is missing. Add it in ChatGPT Sites → Xenvora Digital by Edit Buddy → More actions → Settings. Never paste it into this editor or chat.',code:'key_missing'},503);
  if(!request.headers.get('content-type')?.includes('audio/wav'))return json({error:'Expected audio/wav.'},415);
  const length=Number(request.headers.get('content-length')||0);if(length>1920100)return json({error:'Audio exceeds the 60-second limit.'},413);
  let total=0;const chunks:Uint8Array[]=[];const reader=request.body?.getReader();if(!reader)return json({error:'No audio provided.'},400);
